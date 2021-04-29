@@ -1,0 +1,31 @@
+/* remove default margin and padding from body */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* set map, body, and html to 100% of the screen size */
+#map,
+body,
+html {
+  height: 100%;
+}
+
+.mycluster1 {
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: greenyellow;
+  text-align: center;
+  font-size: 24px;
+}
+.mycluster2 {
+  border-radius: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #ffdb58;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
