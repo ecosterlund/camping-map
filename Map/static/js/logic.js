@@ -16,7 +16,7 @@ var parkIcon = L.Icon.extend({
       popupAnchor:  [0, -45]
   }
 });
-var realParkIcon = new parkIcon({iconUrl: 'riparianhabitat.png'})
+var realParkIcon = new parkIcon({iconUrl: 'static/icons/riparianhabitat.png'})
 
 var campIcon = L.Icon.extend({
   options: {
@@ -25,7 +25,7 @@ var campIcon = L.Icon.extend({
       popupAnchor:  [0, -45]
   }
 });
-var realCampIcon = new campIcon({iconUrl: 'campfire-2.png'})
+var realCampIcon = new campIcon({iconUrl: 'static/icons/campfire-2.png'})
 
 
 
