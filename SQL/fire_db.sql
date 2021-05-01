@@ -10,6 +10,6 @@ CREATE TABLE firemap (
   fire_cause_specific VARCHAR(50),
   incident_name VARCHAR(50)
 );
-DROP TABLE firemap;
 
 SELECT * FROM firemap;
+SELECT lat, lng FROM firemap;

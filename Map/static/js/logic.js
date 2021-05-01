@@ -154,10 +154,11 @@ d3.json(parksURL).then((p_response) => {
 
 
                   // Define variables for our tile layers
-                  var light = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+                  var outdoors = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
                     attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
                     maxZoom: 18,
-                    id: "light-v10",
+                    id: "outdoors-v11",                    
+                    // id: "light-v10",
                     accessToken: API_KEY
                   });
 
@@ -170,7 +171,7 @@ d3.json(parksURL).then((p_response) => {
 
                   // Only one base layer can be shown at a time
                   var baseMaps = {
-                    Light: light,
+                    Outdoors: outdoors,
                     Dark: dark
                   };
 
@@ -210,7 +211,7 @@ d3.json(parksURL).then((p_response) => {
                 //   accessToken: API_KEY
                 // }).addTo(myMap);
                 
-                // var url = "https://data.sfgov.org/resource/cuks-n6tp.json?$limit=10000";
+                // var url = "";
                 
                 // d3.json(url).then(function(response) {
                 
