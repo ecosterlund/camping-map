@@ -48,38 +48,49 @@ def firecoordinates():
     #Creating empty arrays for lat and long fire values
     lat = []
     long = []
+
     #Grabbing data from database
     latdata = engine.execute("SELECT lat FROM firemap")
     longdata = engine.execute("SELECT lng FROM firemap")
+
     #Append latitude data from db to the empty lat array
     for record in latdata:
         lat.append(record)
+
     #Append longitude data from db to the empty long array
     for record in longdata:
         long.append(record)
+
     #Defining dictionary and key values
     data = {'Lat': lat,
             'Long': long
             }
+
     #Converting data variable into pandas dataframe (df)
     df = pd.DataFrame(data, columns = ['Lat', 'Lng'])
+
     #Converting the pandas dataframe into a dictionary variable (fire_dict)
     fire_dict = df.to_dict()
     df = fire_dict
+
     #Dependency (used in an example, may be able to define outside of function)
     import json
+
     #Converting pandas dataframe(df) into json file
     class JSONEncoder(json.JSONEncoder):
         def default(self, obj):
             if hasattr(obj, 'to_json'):
                 return obj.to_json(orient='records')
             return json.JSONEncoder.default(self, obj)
+
     #!-----ERROR OCCURS WHEN RUNNING NEXT LINE OF CODE (When running the jupyter notebook this error occurs: 
     #!-----(TypeError: Object of type 'RowProxy' is not JSON serializable)-----!
     with open('result.json', 'w') as fp:
         json.dump({'1':df,'2':df}, fp, cls=JSONEncoder)
+
     #Load the coordinate data into a json file called "result.json"
     json.load(open('result.json')
+    
     #Read the json that has been loaded with the pandas dataframe (df)
     pd.read_json(json.load(open('result.json'))['1'])
 
