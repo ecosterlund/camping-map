@@ -47,18 +47,24 @@ def names():
     # Create our session (link) from Python to the DB
     session = Session(engine)
     """Return a list of all Fire Coordinates"""
-    # Query All Records in the the Database and jsonify
+    # # Query All Records in the the Database and jsonify
     latdata = engine.execute("SELECT lat FROM firemap")
     longdata = engine.execute("SELECT lng FROM firemap")
 
-    ####--------WORKING ON TRANSFERRING LIST OF ARRAYS INTO DICT OBJECT
+    data = {'Lat': latdata,
+        'Long': longdata
+        }
+    df = pd.DataFrame(data, columns = ['Lat', 'Lng'])
+
+    my_dictionary = df.to_dict()
+    ####--------WORKING ON TRANSFERRING LIST OF ARRAYS INTO DICT OBJECT --------
     # d1=zip(latdata,longdata)
     # print (d1)#Output:<zip object at 0x01149528>
     # #Converting zip object to dict using dict() contructor.
     # print (dict(d1))
 
     # #Create loop to make array a dictionary
-    latlongdict = {"lat" : latdata,"long": longdata}
+    # latlongdict = {"lat" : latdata,"long": longdata}
     # for entry in latlongdata:
     #     latlongdict["lat"].append(latlongdata[entry])
     #     # latlongdict["long"].append(latlongdata[entry])	
@@ -68,7 +74,7 @@ def names():
 
     # print(latlongdata)
     
-    return latlongdict
+    return jsonify(my_dictionary)
 
 # @app.route("/jsonify")
 # def Fires():
