@@ -185,7 +185,7 @@ d3.json(parksURL).then((p_response) => {
                   var myMap = L.map("map", {
                     center: [44.967243, -103.771556], 
                     zoom: 4,
-                    layers: [dark, parkMarkers, campMarkers] 
+                    layers: [outdoors, parkMarkers, campMarkers] 
                   });
 
                   // Pass our map layers into our layer control
