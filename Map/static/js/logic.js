@@ -25,22 +25,22 @@ var campIcon = L.Icon.extend({
       popupAnchor:  [0, -45]
   }
 });
-var realCampIcon = new campIcon({iconUrl: 'static/icons/campfire-2.png'})
+var realCampIcon = new campIcon({iconUrl: 'static/icons/wildderness_camping.png'})
 
 
 
-
-function clusterMaker(cluster) {
-  var markers = cluster.getAllChildMarkers();
-  var n = 0;
-  for (var i = 0; i < markers.length; i++) {
-    n += markers[i].number;
-  }
-  var small = n < 65;
-  var className = small ? 'mycluster1' : 'mycluster2';
-  var size = small ? 40 : 60;
-  return L.divIcon({ html: n, className: className, iconSize: L.point(size, size) });
-}
+// @TODO If we have extra time, change cluster colors
+// function clusterMaker(cluster) {
+//   var markers = cluster.getAllChildMarkers();
+//   var n = 0;
+//   for (var i = 0; i < markers.length; i++) {
+//     n += markers[i].number;
+//   }
+//   var small = n < 65;
+//   var className = small ? 'mycluster1' : 'mycluster2';
+//   var size = small ? 40 : 60;
+//   return L.divIcon({ html: n, className: className, iconSize: L.point(size, size) });
+// }
 
 
 
@@ -95,7 +95,7 @@ d3.json(parksURL).then((p_response) => {
     // loop through the parks array, create a new marker, push it to the camps markers array
     parkMarkers.addLayer(
       L.marker(parks[i].location, {icon: realParkIcon})
-      .bindPopup("<h2>" + parks[i].name + "</h2><h3>" + parks[i].designation + "</h3><p>" + parks[i].description + `</p><a href=${parks[i].pUrl}>` + parks[i].pUrl + "</a>")
+      .bindPopup("<h2>" + parks[i].name + "</h2><h3>" + parks[i].designation + "</h3><p>" + parks[i].description + `</p><a href=${parks[i].pUrl} target=“_blank”>` + "Click Here to Plan Your Visit" +"</a>")
     );
     
   }
@@ -141,7 +141,7 @@ d3.json(parksURL).then((p_response) => {
                     // loop through the camps array, create a new marker, push it to the camps markers array
                     campMarkers.addLayer(
                       L.marker(camps[i].location, {icon: realCampIcon})
-                      .bindPopup("<h2>" + camps[i].name + "</h2><p>" + camps[i].description + "</p><h3>" + camps[i].reservationInfo + `</h3><a href=${camps[i].reservationUrl}>` + camps[i].reservationUrl + "</a>")
+                      .bindPopup("<h2>" + camps[i].name + "</h2><p>" + camps[i].description + "</p><h3>" + camps[i].reservationInfo + `</h3><a href=${camps[i].reservationUrl} target=“_blank”>` + "Click Here to Plan Your Visit" + "</a>")
                     );
                     
                   }
@@ -191,7 +191,46 @@ d3.json(parksURL).then((p_response) => {
                   // Add the layer control to the map
                   L.control.layers(baseMaps, overlayMaps).addTo(myMap);
 
-
+                  
 
                   })
+                // --------------------------- PUT HEAT MAP CODE HERE------------------------------------------------------
+                // HEATMAP EXAMPLE CODE FOR REFERENCE BELOW
+                // var myMap = L.map("map", {
+                //   center: [37.7749, -122.4194],
+                //   zoom: 13
+                // });
+                
+                // L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+                //   attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+                //   tileSize: 512,
+                //   maxZoom: 18,
+                //   zoomOffset: -1,
+                //   id: "mapbox/streets-v11",
+                //   accessToken: API_KEY
+                // }).addTo(myMap);
+                
+                // var url = "https://data.sfgov.org/resource/cuks-n6tp.json?$limit=10000";
+                
+                // d3.json(url).then(function(response) {
+                
+                //   console.log(response);
+                
+                //   var heatArray = [];
+                
+                //   for (var i = 0; i < response.length; i++) {
+                //     var location = response[i].location;
+                
+                //     if (location) {
+                //       heatArray.push([location.coordinates[1], location.coordinates[0]]);
+                //     }
+                //   }
+                
+                //   var heat = L.heatLayer(heatArray, {
+                //     radius: 20,
+                //     blur: 35
+                //   }).addTo(myMap);
+                
+                // });
+                // ----------------------- END OF HEATMAP EXAMPLE CODE--------------------------------
 })                  // everything must be in the d3 call, or async will not populate parks before using it to populate parkMarkers
