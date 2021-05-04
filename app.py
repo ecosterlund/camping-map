@@ -64,11 +64,11 @@ dfjson = df.to_json()
 #################################################
 # 2. Create an app, being sure to pass __name__
 app = Flask(__name__)
-# 3. Define what to do when a user hits the index route
+# 3. Define what to do when a user hits the index route ------------------------- NEED TO RENDER TEMPLATE HERE
 @app.route("/")
 def welcome():
 
-    return print("return index.html here")
+    return "return index.html here"
 
 @app.route("/jsonify")
 def firecoordinates():
