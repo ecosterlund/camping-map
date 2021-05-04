@@ -28,14 +28,34 @@ latlongdata = engine.execute("SELECT lat, lng FROM firemap")
 #################################################
 # Flask Setup
 #################################################
-# 2. Create an app, being sure to pass __name__
+# Create an app
 app = Flask(__name__)
-# 3. Define what to do when a user hits the index route ------------------------- NEED TO RENDER TEMPLATE HERE
+
+#################################################
+# Route to homepage: index.html
+#################################################
+# Define what to do when a user hits the index route
 @app.route("/")
 def welcome():
-
+    
     return render_template("index.html")
 
+#################################################
+# Routes to other html files: story.html and team.html
+#################################################
+@app.route("/story")
+def story():
+
+    return render_template("story.html")
+
+# @app.route("/team")
+# def team():
+
+#     return render_template("team.html")
+
+#################################################
+# Route to obtain firemap data from firemap_db
+#################################################
 @app.route("/jsonify")
 def firecoordinates():
     #################################################
@@ -46,6 +66,9 @@ def firecoordinates():
 
     return data
 
+
+#################################################
 #End of App
+#################################################    
 if __name__ == "__main__":
     app.run(debug=True)
