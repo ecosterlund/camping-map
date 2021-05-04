@@ -12,8 +12,6 @@ from sqlalchemy import create_engine
 import psycopg2
 import json
 
-# Path to sqlite
-database_path = "postgres://postgres:postgres@localhost:5433/firemap_db"
 
 #################################################
 # Database Setup
@@ -26,37 +24,6 @@ engine = create_engine(database_path)
 
 # Query All Records in the the Database
 latlongdata = engine.execute("SELECT lat, lng FROM firemap")
-
-
-#################################################
-# Getting fire data into json object
-#################################################
-#Creating empty arrays for lat and long fire values
-lat = []
-long = []
-
-#Grabbing data from database
-latdata = engine.execute("SELECT lat FROM firemap")
-longdata = engine.execute("SELECT lng FROM firemap")
-
-#Append latitude data from db to the empty lat array
-for record in latdata:
-    lat.append(record)
-
-#Append longitude data from db to the empty long array
-for record in longdata:
-    long.append(record)
-
-#Defining dictionary and key values
-data = {'Lat': lat,
-        'Lng': long
-        }
-
-#Converting data variable into pandas dataframe (df)
-df = pd.DataFrame(data, columns = ['Lat', 'Lng'])
-
-#Converting pandas dataframe(df) into json file
-dfjson = df.to_json()
 
 #################################################
 # Flask Setup
