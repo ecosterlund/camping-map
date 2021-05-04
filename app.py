@@ -1,6 +1,5 @@
 # 1. import Flask and dependencies
-from flask import Flask
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
@@ -68,7 +67,7 @@ app = Flask(__name__)
 @app.route("/")
 def welcome():
 
-    return "return index.html here"
+    return render_template("index.html")
 
 @app.route("/jsonify")
 def firecoordinates():
