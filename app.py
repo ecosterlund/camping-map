@@ -1,6 +1,5 @@
 # 1. import Flask and dependencies
 from flask import Flask, jsonify, render_template
-import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
@@ -8,10 +7,14 @@ import numpy as np
 import sqlite3
 from pathlib import Path
 import pandas as pd
-from sqlalchemy import create_engine
 import psycopg2
 import json
+import sqlite3
+from sqlite3 import Error
 
+
+####Creating the engine
+engine = create_engine('sqlite://', echo=False)
 
 #################################################
 # Database Setup
@@ -37,7 +40,7 @@ app = Flask(__name__)
 # Define what to do when a user hits the index route
 @app.route("/")
 def welcome():
-    
+
     return render_template("index.html")
 
 #################################################

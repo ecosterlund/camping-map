@@ -120,6 +120,9 @@ d3.json(parksURL).then((p_response) => {
                             var description = response.data[i].description
                             var reservationInfo = response.data[i].reservationInfo
                             var reservationUrl = response.data[i].reservationUrl
+                            if (reservationUrl = ""){
+                              reservationUrl = "https://www.nps.gov/planyourvisit/index.htm"
+                            }
                             var name = response.data[i].name;
                             var location = [lat, lng]
                             var obj = {
