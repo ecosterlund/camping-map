@@ -5,6 +5,7 @@
 //   }
 var camps = [];
 var parks = [];
+var heatArray = [];
 // An array which will be used to store created camp markers
 var campMarkers = L.markerClusterGroup();
 var parkMarkers = L.markerClusterGroup();
@@ -71,13 +72,19 @@ d3.json(parksURL).then((p_response) => {
     
     if (p_response.data[i].latitude != ""){
       var p_lat = parseFloat(p_response.data[i].latitude);
-      var p_lng = parseFloat(p_response.data[i].longitude);
+      var p_lng = -Math.abs(parseFloat(p_response.data[i].longitude));
       var p_description = p_response.data[i].description
       var designation = p_response.data[i].designation
       var pUrl = p_response.data[i].url
-      if (pUrl = ""){
-        pURL = "https://www.nps.gov/planyourvisit/index.htm"
-      }
+      
+        
+
+
+
+
+
+
+
       var p_name = p_response.data[i].fullName;
       var p_location = [p_lat, p_lng]
       var p_obj = {
@@ -88,11 +95,12 @@ d3.json(parksURL).then((p_response) => {
         pUrl: pUrl
       }
       parks.push(p_obj) 
+      
     } else {
       continue;
     }
   };
-
+  
 
   for (var i = 0; i < parks.length; i++) {
     // loop through the parks array, create a new marker, push it to the camps markers array
@@ -104,6 +112,28 @@ d3.json(parksURL).then((p_response) => {
   }
 
 
+                  
+  
+  
+                  var jsonUrl = "/jsonify"
+                  d3.json(jsonUrl).then(function(heatData) {
+
+                    
+                                          
+                    for (var i = 0; i < heatData.length; i++) {
+                      var heatLat = parseFloat(heatData[i].lat);
+                      var heatLng = parseFloat(heatData[i].lng);
+                      var heatLoc = [heatLat, heatLng];
+                      // console.log(heatLoc)
+                      heatArray.push(heatLoc)
+                                          
+                                              
+                    } 
+
+                  })
+  
+  
+  
                   // Feeding the api url into d3 and getting the JSON as a response
                   d3.json(campsURL).then((response) => {
                     
@@ -116,12 +146,14 @@ d3.json(parksURL).then((p_response) => {
                           // Some camps do not have a lat lng listed, so we only want to append our camps list with camps who's lat lng are listed.  If they do not have a value the loop continues
                           if (response.data[i].latitude != ""){
                             var lat = parseFloat(response.data[i].latitude);
-                            var lng = parseFloat(response.data[i].longitude);
+                            var lng = -1 * Math.abs(parseFloat(response.data[i].longitude));
+                            console.log(lng)
                             var description = response.data[i].description
                             var reservationInfo = response.data[i].reservationInfo
                             var reservationUrl = response.data[i].reservationUrl
-                            if (reservationUrl = ""){
-                              reservationUrl = "https://www.nps.gov/planyourvisit/index.htm"
+                            //console.log(reservationUrl)
+                            if (reservationUrl == "") {
+                              reservationUrl = "https://www.nps.gov/index.htm"
                             }
                             var name = response.data[i].name;
                             var location = [lat, lng]
@@ -159,6 +191,14 @@ d3.json(parksURL).then((p_response) => {
                   var parkLayer = L.layerGroup(parkMarkers);
 
 
+                  var heatView = L.heatLayer(heatArray, {
+                    radius: 20,
+                    blur: 35
+                  });  
+
+                  
+
+
                   // Define variables for our tile layers
                   var outdoors = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
                     attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
@@ -190,9 +230,11 @@ d3.json(parksURL).then((p_response) => {
                   // Create map object and set defaults, lat/long for center of america
                   var myMap = L.map("map", {
                     center: [44.967243, -103.771556], 
-                    zoom: 4,
-                    layers: [outdoors, parkMarkers, campMarkers] 
+                    zoom: 5,
+                    layers: [outdoors, parkMarkers, campMarkers, heatView] 
                   });
+
+                  
 
                   // Pass our map layers into our layer control
                   // Add the layer control to the map
@@ -203,7 +245,6 @@ d3.json(parksURL).then((p_response) => {
                   })
                 // --------------------------- PUT HEAT MAP CODE HERE------------------------------------------------------
                 
-                // d3.json(dat)
 
 
 
