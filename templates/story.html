@@ -4,6 +4,7 @@
 <head>
   
   <title>Basic Map</title>
+  <link rel="icon" href="{{ url_for('static', filename='img/national-park.png')}}">
 
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -31,13 +32,13 @@
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Visualization</a>
+          <a class="nav-link" href="/">Visualization</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="story.html">Story</a>
+          <a class="nav-link active" href="/story">Story</a>
         </li>
         <li class="nav-item">
-			<a class="nav-link" href="team.html">Team</a>
+			<a class="nav-link" href="/team">Team</a>
         </li>
       </ul>
     </div>
@@ -52,7 +53,7 @@
 							<p class="major">A (modular, highly tweakable) responsive one-page template designed by <a href="https://html5up.net">HTML5 UP</a> and released for free under the <a href="https://html5up.net/license">Creative Commons</a>.</p>
 						</div>
 						<div class="image">
-							<img src="images/camping-tent-view.jpg" alt="" />
+							<img src="{{url_for('static', filename='img/camping-tent-view.jpg')}}" alt="" />
 						</div>
 					</section>
 
@@ -61,14 +62,14 @@
 						<div class="content">
 							<h2>Wildfires Causation </h2>
 							<p>Wildfires are normally unplanned and unwanted events that are triggered either by lightning-caused fires, unauthorized human-caused fires,
-								and escaped prescribed fire projects. Fun Fact: 90% of all wildfires are stzrted by humans. According to the Congressional Research service, "The Forest Service within the U.S. Department of Agriculture
+								and escaped prescribed fire projects. Fun Fact: 90% of all wildfires are started by humans. According to the Congressional Research service, "The Forest Service within the U.S. Department of Agriculture
 								carries out wildfire management and response across the 193 million acres of the National Forest System (NFS)." Whereas the Department of the Interior better known as
 								the DOI manages most the States wildfire response for more than 400 million acrees of national. parks, wildlife refuges and pereseves historical public lands and Indian reservations. In 2020,
 								over 58K wildfires took place and burned 10.3 million acres the most acreage impacted in a year. Nearly 40% of these acres took place in California.
 							</p>
 						</div>
 						<div class="image">
-							<img src="images/campfire-pic.jpg" alt="" />
+							<img src="{{url_for('static', filename='img/campfire-pic.jpg')}}" alt="" />
 						</div>
 					</section>
 
@@ -84,7 +85,7 @@
 							</ul>
 						</div>
 						<div class="image">
-							<img src="images/van-camping.jpg" alt="" />
+							<img src="{{url_for('static', filename='img/van-camping.jpg')}}" alt="" />
 						</div>
                     </section>
                     
@@ -99,7 +100,7 @@
 							</ul>
 						</div>
 						<div class="image">
-							<img src="images/hammock-camp.jpg" alt="" />
+							<img src="{{url_for('static', filename='img/hammock-camp.jpg')}}" alt="" />
 						</div>
 					</section>
 
@@ -115,9 +116,9 @@
   <!-- Marker Cluster JS -->
   <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
   <!-- API key -->
-  <script type="text/javascript" src="static/js/config.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/config.js')}}"></script>
   <!-- JS -->
-  <script type="text/javascript" src="static/js/logic.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/logic.js')}}"></script>
 
   
 

@@ -19,7 +19,7 @@ engine = create_engine('sqlite://', echo=False)
 #################################################
 # Database Setup
 #################################################
-# Path to sqlite
+# Path to sqlite---------------- IF THIS DOESN'T WORK CHANGE PORT TO 5433
 database_path = "postgres://postgres:postgres@localhost:5432/firemap_db"
 
 # Create an engine that can talk to the database
@@ -51,10 +51,10 @@ def story():
 
     return render_template("story.html")
 
-# @app.route("/team")
-# def team():
+@app.route("/team")
+def team():
 
-#     return render_template("team.html")
+    return render_template("team.html")
 
 #################################################
 # Route to obtain firemap data from firemap_db
