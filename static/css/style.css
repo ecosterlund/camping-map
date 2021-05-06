@@ -1,4 +1,4 @@
-/* remove default margin and padding from body */
+remove default margin and padding from body
 body {
   padding: 0;
   margin: 0;
@@ -30,9 +30,25 @@ html {
   box-sizing: border-box;
 }
 
-h5 {
-  font-size: 4em;
+h2 {
+  font-size: 2em;
+  color: black;
+  font-family: Papyrus, Helvetica, sans-serif;
+  
+}
 
+h5 {
+  font-size: 2em;
+  color: #838383;
+  font-family: Papyrus, Helvetica, sans-serif;
+  
+
+}
+
+h6 {
+  font-size: 4em;
+  color: #004080;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* This is the loader animation to the map */
@@ -42,7 +58,7 @@ body, html {
 }
 
 body {
-background-color: #242F3F;
+background-color: #add8e6;
 }
 
 .loader {

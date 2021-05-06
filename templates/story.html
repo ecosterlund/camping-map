@@ -20,7 +20,9 @@
 
 
   <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="static/css/story_style.css">
+  
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/story_style.css')}}">
+  
 </head>
 
 <body>
@@ -35,7 +37,7 @@
           <a class="nav-link active" href="story.html">Story</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Team</a>
+			<a class="nav-link" href="team.html">Team</a>
         </li>
       </ul>
     </div>
@@ -57,8 +59,13 @@
 				<!-- Two -->
 					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
 						<div class="content">
-							<h2>Wild Fire Data (add year span?) </h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
+							<h2>Wildfires Causation </h2>
+							<p>Wildfires are normally unplanned and unwanted events that are triggered either by lightning-caused fires, unauthorized human-caused fires,
+								and escaped prescribed fire projects. Fun Fact: 90% of all wildfires are stzrted by humans. According to the Congressional Research service, "The Forest Service within the U.S. Department of Agriculture
+								carries out wildfire management and response across the 193 million acres of the National Forest System (NFS)." Whereas the Department of the Interior better known as
+								the DOI manages most the States wildfire response for more than 400 million acrees of national. parks, wildlife refuges and pereseves historical public lands and Indian reservations. In 2020,
+								over 58K wildfires took place and burned 10.3 million acres the most acreage impacted in a year. Nearly 40% of these acres took place in California.
+							</p>
 						</div>
 						<div class="image">
 							<img src="images/campfire-pic.jpg" alt="" />
@@ -69,7 +76,10 @@
 					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
 						<div class="content">
 							<h2>National Parks</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
+							<p>In 1916, President Woodrow Wilson implemented an act around the National Park Service. This service protects the sceneries, historic objects and the wild 
+								life environment. There is total 407 sites with 28 different designations that is protected under this act. These include 127 historical parks, 78 national monuments,
+								59 national parks, 25 battlefields, 19 preserves, 18 recreations areas, 10 seashores, four parkways, four lakesores, and two reserves (Sited by  <a href="https://www.outdoorproject.com/articles/59-fun-facts-about-our-national-parks">Outdoor Project</a>). 
+							</p>
 							<ul class="actions stacked">
 							</ul>
 						</div>
@@ -81,8 +91,10 @@
                     <!-- Four -->
 					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
 						<div class="content">
-							<h2>Campgrounds</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
+							<h2>Campgrounds Activities</h2>
+							<p>Camping activity has consistently been on an incline in the past years. Fun Fact: 56% of campers are millennials. During the 2019-20 Pandemic, there has been 
+								a huge demand for campsite bookings. Campsites has shown positive outlooks around problem solving, family time, improved sleeping patterns, happier emotions, and the list goes on. There are ton of great camping destinations across the United States.
+								The top 5 States that stands our for the breathtaking views are: Colorado, Missouri, Montana, New Mexico, and New York.</p>
 							<ul class="actions stacked">
 							</ul>
 						</div>

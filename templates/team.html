@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <title>Basic Map</title>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+
+
+  <!-- Marker Cluster CSS -->
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+Pyt
+  <!-- Our CSS -->
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/team_style.css')}}">
+</head>
+
+<body>
+
+
+    <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Visualization</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="story.html">Story</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="team.html">Team</a>
+            </li>
+          </ul>
+        </div>
+    
+    <div class="py-5 team4">
+    <div class="container">
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-7 text-center">
+          <h3 class="mb-3">Experienced & Professional Team</h3>
+          <h6 class="subtitle">Teamwork Makes The Dream Works.</h6>
+        </div>
+      </div>
+      <div class="row">
+        <!-- column  -->
+        <div class="col-lg-3 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12">
+              <img src="images/jeff.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+            </div>
+            <div class="col-md-12 text-center">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Ben Winters</h5>
+                <p>ADD TEXT</p>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-facebook"></i></a></li>
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-twitter"></i></a></li>
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-instagram"></i></a></li>
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-behance"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <div class="col-lg-3 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12">
+              <img src="images/brian.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+            </div>
+            <div class="col-md-12 text-center">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Brian Morton</h5>
+                <p>ADD TEXT</p>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-facebook"></i></a></li>
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-twitter"></i></a></li>
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-instagram"></i></a></li>
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-behance"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <div class="col-lg-3 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12">
+              <img src="images/erik.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+            </div>
+            <div class="col-md-12 text-center">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Erik Osterlund</h5>
+                <p>ADD TEXT</p>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-facebook"></i></a></li>
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-twitter"></i></a></li>
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-instagram"></i></a></li>
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-behance"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <div class="col-lg-3 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12">
+              <img src="images/jeff.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+            </div>
+            <div class="col-md-12 text-center">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Jeff Toussaint</h5>
+                <p>ADD TEXT</p>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-facebook"></i></a></li>
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-twitter"></i></a></li>
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-instagram"></i></a></li>
+                  <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-behance"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <!-- d3 JS -->
+   <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+   <!-- Leaflet JS -->
+   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+     crossorigin=""></script>
+   <!-- Marker Cluster JS -->
+   <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+   <!-- API key -->
+   <script type="text/javascript" src="static/js/config.js"></script>
+   <!-- JS -->
+   <script type="text/javascript" src="static/js/logic.js"></script>
+ 
+   
+ 
+ </body>
+ 
+ </html>
+ 

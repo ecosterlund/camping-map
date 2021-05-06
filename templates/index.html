@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>Basic Map</title>
+  <title>Dangerous Parks and Camping Areas</title>
 
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -20,7 +20,8 @@
 
 
   <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+  
 </head>
 
 <body>
@@ -35,14 +36,15 @@
           <a class="nav-link" href="story.html">Story</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Team</a>
+          <a class="nav-link" href="team.html">Team</a>
         </li>
       </ul>
     </div>
     <div class="card-body">
-      <h5 class="card-title">National Park Explorer</h5>
-      <p class="card-text">The Power of Visualization</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <h5 class="card-title">NATIONAL PARK </h5>
+      <h6 class="card-title"><b>EXPLORER'S MAP</b></h6>
+      <!-- <br> -->
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
     </div>
   </div>
 
