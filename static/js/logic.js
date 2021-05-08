@@ -106,7 +106,7 @@ d3.json(parksURL).then((p_response) => {
     // loop through the parks array, create a new marker, push it to the camps markers array
     parkMarkers.addLayer(
       L.marker(parks[i].location, {icon: realParkIcon})
-      .bindPopup("<h2>" + parks[i].name + "</h2><h3>" + parks[i].designation + "</h3><p>" + parks[i].description + `</p><a href=${parks[i].pUrl} target="_blank">` + "Click Here to Plan Your Visit" +"</a>")
+      .bindPopup("<h2>" + parks[i].name + "</h2><h3>" + parks[i].designation + "</h3><p>" + parks[i].description + `</p><a href=${parks[i].pUrl} class="btn btn-light" target=“_blank”>` + "Plan Your Visit" +"</a>")
     );
     
   }
@@ -179,7 +179,7 @@ d3.json(parksURL).then((p_response) => {
                     // loop through the camps array, create a new marker, push it to the camps markers array
                     campMarkers.addLayer(
                       L.marker(camps[i].location, {icon: realCampIcon})
-                      .bindPopup("<h2>" + camps[i].name + "</h2><p>" + camps[i].description + "</p><h3>" + camps[i].reservationInfo + `</h3><a href=${camps[i].reservationUrl} target="_blank">` + "Click Here to Plan Your Visit" + "</a>")
+                      .bindPopup("<h2>" + camps[i].name + "</h2><p>" + camps[i].description + "</p><h4>" + camps[i].reservationInfo + `</h4><a href=${camps[i].reservationUrl} class="btn btn-light" target=“_blank”>` + "Plan Your Visit" + "</a>")
                     );
                     
                   }

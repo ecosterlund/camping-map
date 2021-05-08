@@ -20,7 +20,7 @@ engine = create_engine('sqlite://', echo=False)
 # Database Setup
 #################################################
 # Path to sqlite---------------- IF THIS DOESN'T WORK CHANGE PORT TO 5433
-database_path = "postgres://postgres:postgres@localhost:5432/firemap_db"
+database_path = "postgres://postgres:postgres@localhost:5433/firemap_db"
 
 # Create an engine that can talk to the database
 engine = create_engine(database_path)
