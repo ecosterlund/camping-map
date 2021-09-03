@@ -47,9 +47,11 @@ lxml
 MarkupSafe==1.1.1
 matplotlib
 mistune==0.8.4
+mkl-fft==1.0.6
 mkl-fft
 mkl-random==1.1.1
 mkl-service==2.3.0
+mwclient
 nb-conda-kernels 
 nbclient 
 nbconvert 
@@ -58,6 +60,7 @@ nest-asyncio
 nltk==3.6.2
 notebook
 numpy==1.18.5
+oauthlib>=3.0.0
 packaging==20.4
 pandas 
 pandocfilters==1.4.2
@@ -82,6 +85,7 @@ PyYAML==5.4.1
 pyzmq==19.0.2
 regex==2021.4.4
 requests
+requests-oauthlib
 scipy
 selenium==3.141.0
 Send2Trash==1.5.0
