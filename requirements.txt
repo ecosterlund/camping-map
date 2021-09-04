@@ -82,7 +82,6 @@ pyrsistent
 PySocks 
 python-dateutil
 pytz 
-pywin32==228
 pywinpty==0.5.7
 PyYAML==5.4.1
 pyzmq 
