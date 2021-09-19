@@ -57,7 +57,6 @@ nbclient
 nbconvert 
 nbformat 
 nest-asyncio
-nltk==3.6.2
 notebook
 numpy==1.18.5
 oauthlib==3.1.1
@@ -75,7 +74,6 @@ prompt-toolkit
 psycopg2==2.8.6
 pycparser 
 Pygments 
-pymongo==3.12.0
 pyOpenSSL 
 pyparsing 
 pyrsistent 
