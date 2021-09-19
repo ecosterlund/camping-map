@@ -2,7 +2,6 @@ argon2-cffi
 async-generator==1.10
 attrs 
 backcall 
-beautifulsoup4 
 bleach 
 brotlipy==0.7.0
 cached-property==1.5.2
@@ -24,12 +23,10 @@ defusedxml
 dpcpp-cpp-rt==2021.2.0
 entrypoints==0.3
 Flask
-Flask-PyMongo==2.3.0
 geojson==2.5.0
 gmaps==0.9.0
 greenlet 
 gunicorn==20.1.0
-h5py==3.1.0
 idna 
 importlib-metadata 
 intel-openmp==2021.2.0
@@ -38,7 +35,6 @@ ipython
 ipython-genutils
 ipywidgets 
 itsdangerous 
-jedi 
 Jinja2 
 jsonschema 
 jupyter-client 
@@ -46,11 +42,8 @@ jupyter-core
 jupyterlab-pygments
 jupyterlab-widgets
 kdtree==0.16
-Keras==2.4.3
-kiwisolver
 lxml
 MarkupSafe 
-matplotlib
 mistune==0.8.4
 mwclient==0.10.1
 nbclient
@@ -67,7 +60,6 @@ pandas
 pandocfilters
 parso
 pickleshare
-Pillow
 pprintpp==0.4.0
 prometheus-client
 prompt-toolkit
@@ -85,8 +77,7 @@ PyYAML==5.4.1
 pyzmq 
 regex==2021.4.4
 requests
-requests-oauthlib==1.3.0
-scipy 
+requests-oauthlib==1.3.0 
 selenium==3.141.0
 Send2Trash 
 six 
