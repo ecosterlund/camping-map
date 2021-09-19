@@ -16,7 +16,6 @@ common-cmplr-lib-rt==2021.2.0
 common-cmplr-lic-rt==2021.2.0
 configparser==5.0.2
 crayons==0.4.0
-cryptography 
 cycler==0.10.0
 decorator 
 defusedxml
@@ -42,7 +41,6 @@ jupyter-core
 jupyterlab-pygments
 jupyterlab-widgets
 kdtree==0.16
-lxml
 MarkupSafe 
 mistune==0.8.4
 mwclient==0.10.1
