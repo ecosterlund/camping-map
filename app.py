@@ -14,20 +14,20 @@ from sqlite3 import Error
 import csv
 
 
-####Creating the engine
-engine = create_engine('sqlite://', echo=False)
+# ####Creating the engine
+# engine = create_engine('sqlite://', echo=False)
 
-#################################################
-# Database Setup
-#################################################
-# Path to sqlite---------------- IF THIS DOESN'T WORK CHANGE PORT TO 5433
-database_path = "postgresql://postgres:postgres@localhost:5433/firemap_db"
+# #################################################
+# # Database Setup
+# #################################################
+# # Path to sqlite---------------- IF THIS DOESN'T WORK CHANGE PORT TO 5433
+# database_path = "postgresql://postgres:postgres@localhost:5433/firemap_db"
 
-# Create an engine that can talk to the database
-engine = create_engine(database_path)
+# # Create an engine that can talk to the database
+# engine = create_engine(database_path)
 
-# Query All Records in the the Database
-latlongdata = engine.execute("SELECT lat, lng FROM firemap")
+# # Query All Records in the the Database
+# latlongdata = engine.execute("SELECT lat, lng FROM firemap")
 
 #################################################
 # Flask Setup
@@ -60,34 +60,21 @@ def team():
 #################################################
 # Route to obtain firemap data from firemap_db
 #################################################
-@app.route("/jsonify")
-def firecoordinates():
-    #################################################
-    # Getting fire data into json object
-    #################################################
-    res = engine.execute("SELECT lat, lng from firemap")
-    data = json.dumps([dict(r) for r in res])
-    ######-----------------CURRENTLY WORKING TO READ CSV WITHOUT DATABASE-------######
-    # def create_json(csvFilePath, jsonFilePath):
-    #     #Creating empty dictionary
-    #     data = {}
-    #     #Open a csv reader
-    #     with open (csvFilePath, encoding= 'utf-8') as csvf:
-    #         csvReader = csv.DictReader
-    #         #Convert each row to dictionary
-    #         for rows in csvReader:
-    #             #Using Index as primary key
-    #             key = rows['index']
-    #             data[key] = rows
-    #         #Opening json writer and json dumps to fill with data
-    #         with open(jsonFilePath, 'w', encoding='utf-8') as jsonf:
-    #             jsonf.write(json.dumps(data, indent = 4))
-
-    # csvFilePath = r'ETL/master_wildland.csv'
-    # jsonFilePath = r'ETL/master_wildland.csv'
-    # create_json(csvFilePath, jsonFilePath)
-
-    return data
+# @app.route("/jsonify")
+# def firecoordinates():
+#     #################################################
+#     # Getting fire data into json object
+#     #################################################
+#     res = engine.execute("SELECT lat, lng from firemap")
+#     data = json.dumps([dict(r) for r in res])
+#     ######-----------------CURRENTLY WORKING TO READ CSV WITHOUT DATABASE-------######
+#     # csvfile = open('ETL/firecoord.csv', 'r')
+#     # jsonfile = open('wildlandjson.json', 'w')
+#     # reader = csv.DictReader(csvfile, jsonfile)
+#     # for row in reader:
+#     #     json.dump(row, jsonfile)
+#     #     jsonfile.write('/n')
+#     return data
 
 
 #################################################
