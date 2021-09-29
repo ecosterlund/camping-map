@@ -66,7 +66,7 @@ var realCampIcon = new campIcon({iconUrl: 'static/icons/wildderness_camping.png'
 var campsURL = "https://developer.nps.gov/api/v1/campgrounds?limit=1000&api_key=" + PARKS_KEY;
 var parksURL = "https://developer.nps.gov/api/v1/parks?limit=1000&api_key=" + PARKS_KEY;
 
-d3.json(parksURL).then((p_response) => {
+d3.json("/static/geojson/parksJSON.json").then((p_response) => {
 
   for (var i = 0; i < p_response.data.length; i++) {
     
@@ -116,26 +116,36 @@ d3.json(parksURL).then((p_response) => {
   
   
                   var jsonUrl = "/jsonify"
-                  d3.json(jsonUrl).then(function(heatData) {
+                  d3.csv("/static/geojson/full_history.csv").then(function(heatData) {
 
-                    
+
                                           
                     for (var i = 0; i < heatData.length; i++) {
-                      var heatLat = parseFloat(heatData[i].lat);
-                      var heatLng = parseFloat(heatData[i].lng);
-                      var heatLoc = [heatLat, heatLng];
-                      // console.log(heatLoc)
-                      heatArray.push(heatLoc)
-                                          
+                      var heatLat = parseFloat(heatData[i].InitialLatitude);
+                      var heatLng = parseFloat(heatData[i].InitialLongitude);
+                      
+                      if (heatLat > 0 && heatLng < 0){
+                        var heatLoc = [heatLat, heatLng];
+                        heatArray.push(heatLoc);
+
+
+                      } else {
+                        continue;
+                      }
+                      
+                      
+          
                                               
-                    } 
+                    }
+                    
+                   
 
                   })
   
   
   
                   // Feeding the api url into d3 and getting the JSON as a response
-                  d3.json(campsURL).then((response) => {
+                  d3.json("/static/geojson/campsJSON.json").then((response) => {
                     
                     
                     
@@ -147,7 +157,7 @@ d3.json(parksURL).then((p_response) => {
                           if (response.data[i].latitude != ""){
                             var lat = parseFloat(response.data[i].latitude);
                             var lng = -1 * Math.abs(parseFloat(response.data[i].longitude));
-                            console.log(lng)
+                            //console.log(lng)
                             var description = response.data[i].description
                             var reservationInfo = response.data[i].reservationInfo
                             var reservationUrl = response.data[i].reservationUrl
@@ -192,8 +202,9 @@ d3.json(parksURL).then((p_response) => {
 
 
                   var heatView = L.heatLayer(heatArray, {
-                    radius: 20,
-                    blur: 35
+                    // // minOpacity: 0.1, 
+                    // radius: 25,
+                    // blur: 35
                   });  
 
                   
@@ -230,7 +241,7 @@ d3.json(parksURL).then((p_response) => {
                   // Create map object and set defaults, lat/long for center of america
                   var myMap = L.map("map", {
                     center: [44.967243, -103.771556], 
-                    zoom: 5,
+                    zoom: 3,
                     layers: [outdoors, parkMarkers, campMarkers, heatView] 
                   });
 
