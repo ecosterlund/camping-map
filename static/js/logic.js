@@ -62,9 +62,9 @@ var realCampIcon = new campIcon({iconUrl: 'static/icons/wildderness_camping.png'
 
 
 
-// URL for parks dept api, adds api key stored in config.js
-var campsURL = "https://developer.nps.gov/api/v1/campgrounds?limit=1000&api_key=" + PARKS_KEY;
-var parksURL = "https://developer.nps.gov/api/v1/parks?limit=1000&api_key=" + PARKS_KEY;
+// URL for parks dept api, adds api key stored in config.js--- This is a legacy for when API calls were front end
+// var campsURL = "https://developer.nps.gov/api/v1/campgrounds?limit=1000&api_key=" + PARKS_KEY;
+// var parksURL = "https://developer.nps.gov/api/v1/parks?limit=1000&api_key=" + PARKS_KEY;
 
 d3.json("/static/geojson/parksJSON.json").then((p_response) => {
 
